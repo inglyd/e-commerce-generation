@@ -47,4 +47,5 @@ export abstract class Produto {
     public descricao(): void {
         console.log(`${this._nome} - R$${this._preco}`);
     }
+
 }
