@@ -6,7 +6,7 @@ export function main() {
     let opcao, preco, categoria, id: number;
     let nome: string;
 
-    const categorias = ['Materiais escolares', 'Materiais de escritório', 'Embalagens e utilidades', 'Informática'];
+    const categorias = ['Materiais escolares', 'Informática'];
 
     while (true) {
         console.log(colors.bg.black, colors.fg.yellow,
