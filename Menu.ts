@@ -3,7 +3,7 @@ import { colors } from "./src/util/Colors";
 
 export function main() {
 
-    let opcao, preco, categoria, numero: number;
+    let opcao, preco, categoria, id: number;
     let nome: string;
 
     const categorias = ['Materiais escolares', 'Materiais de escritório', 'Embalagens e utilidades', 'Informática'];
@@ -18,7 +18,7 @@ export function main() {
         console.log("                                                     ");
         console.log("            1 - Cadastrar produto                    ");
         console.log("            2 - Listar todos os produtos             ");
-        console.log("            3 - Buscar produto por numero            ");
+        console.log("            3 - Buscar produto por id            ");
         console.log("            4 - Atualizar Dados do produto           ");
         console.log("            5 - Apagar produto                       ");
         console.log("            6 - Sair                                 ");
@@ -59,7 +59,7 @@ export function main() {
                 console.log(colors.fg.whitestrong,
                     "\n\nConsultar dados do produto - por número\n\n", colors.reset);
                 console.log("Digite o número do produto: ")
-                numero = readlinesync.questionInt("")
+                id = readlinesync.questionInt("")
 
                 keyPress()
                 break;
@@ -67,7 +67,7 @@ export function main() {
                 console.log(colors.fg.whitestrong,
                     "\n\nAtualizar dados do produto\n\n", colors.reset);
                 console.log("Digite o número do produto: ");
-                numero = readlinesync.questionInt("");
+                id = readlinesync.questionInt("");
                 keyPress()
                 break;
             case 5:
@@ -75,8 +75,8 @@ export function main() {
                     "\n\nApagar um produto\n\n", colors.reset);
 
                 console.log("Digite o número da produto: ");
-                numero = readlinesync.questionInt("");
-                //produtos.deletar(numero);
+                id = readlinesync.questionInt("");
+                //produtos.deletar(id);
 
                 keyPress()
                 break;
