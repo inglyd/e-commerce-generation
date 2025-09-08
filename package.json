@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-generation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inglyd/e-commerce-generation.git"
+  },
+  "author": "inglyd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inglyd/e-commerce-generation/issues"
+  },
+  "homepage": "https://github.com/inglyd/e-commerce-generation#readme",
+  "dependencies": {
+    "@types/node": "^24.3.1",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.8"
+  }
+}
