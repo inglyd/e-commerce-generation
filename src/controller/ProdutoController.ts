@@ -16,17 +16,18 @@ export class ProdutoController implements ProdutoRepository {
     }
 
     deletar(id: number): void {
-        let buscaProduto = this.buscarNoArray(id);
-
-        if (buscaProduto != null) {
-            this.listaProdutos.splice(this.listaProdutos.indexOf(buscaProduto), 1);
-            console.log(colors.fg.green, "\nO produto id: " + id +
-                " foi apagada com sucesso!", colors.reset);
-        } else
-            console.log(colors.fg.red, "\nO produto id: " + id +
-                " não foi encontrada!", colors.reset);
+        try {
+            let buscaProduto = this.buscarNoArray(id);
+            if (buscaProduto != null) {
+                this.listaProdutos.splice(this.listaProdutos.indexOf(buscaProduto), 1);
+                console.log(colors.fg.green, `\nO produto id: ${id} foi apagado com sucesso!`, colors.reset);
+            } else {
+                console.log(colors.fg.red, `\nO produto id: ${id} não foi encontrado!`, colors.reset);
+            }
+        } catch (error) {
+            console.error(colors.fg.red, "Erro ao deletar produto:", error, colors.reset);
+        }
     }
-
 
     private listaProdutos: Array<Produto> = new Array<Produto>();
     id: number = 0;
@@ -51,15 +52,16 @@ export class ProdutoController implements ProdutoRepository {
         return null
     }
     procurarPorId(id: number): void {
-        let buscaProduto = this.buscarNoArray(id);
-
-        if (buscaProduto != null) {
-            buscaProduto.descricao();
-        } else {
-            console.log(colors.fg.red, "\nO produto id: " + id + " não foi encontrado!", colors.reset);
+        try {
+            let buscaProduto = this.buscarNoArray(id);
+            if (buscaProduto != null) {
+                buscaProduto.descricao();
+            } else {
+                console.log(colors.fg.red, `\nO produto id: ${id} não foi encontrado!`, colors.reset);
+            }
+        } catch (error) {
+            console.error(colors.fg.red, "Erro ao procurar produto:", error, colors.reset);
         }
     }
-
-
 
 }
